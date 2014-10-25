@@ -1,0 +1,24 @@
+﻿@model Eclatech.KidsHub.Objects.Vendor
+
+@{
+    ViewBag.Title = "AddVendor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Vendor</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                @Html.DisplayFor(m => m.VendorName)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.VendorName)
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Save" />
+}

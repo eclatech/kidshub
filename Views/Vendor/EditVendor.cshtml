@@ -1,0 +1,31 @@
+﻿@model Eclatech.KidsHub.Objects.Vendor
+
+@{
+    ViewBag.Title = "EditVendor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Vendor</h2>
+
+@using(Html.BeginForm("EditVendor","Vendor",FormMethod.Post, new Dictionary<string, object>
+                                                                 {
+                                                                     {"class","form-horizontal"},
+                                                                     {"role","form"}
+                                                                 }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.VendorName, new Dictionary<string, object>
+                                              {
+                                                  {"class","col-sm-2 control-label"}
+                                              })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.VendorName,new Dictionary<string, object>
+                                                   {
+                                                       {"class","form-control"}
+                                                   })
+        </div>
+    </div>
+    
+    @Html.HiddenFor(m => m.Id)
+    <input type="submit" class="btn btn-primary btn-default" value="Save" />
+}
