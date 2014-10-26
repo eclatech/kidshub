@@ -1,14 +1,24 @@
-﻿@using Eclatech.KidsHub.Objects
+﻿@using System.Globalization
+@using Eclatech.KidsHub.Objects
+@using Eclatech.KidsHub.Web.Helper
 @model UserProfile
 
 @{
     Layout = null;
 }
 
-Welcome to My Cool Site, @Model.FirstName
+Welcome to Kids Hub Site, @Model.FirstName
 
-We need you to verify your email.  Click this nifty link to get verified!
+We need you to verify your email.  Click the below link to get verified!
 
-@Url.Action("Verify", "Account", new { code = @Model.EmailActivationToken.ToString() })
+<br/>
+<br />
 
-Thanks!  
+<a href="@string.Format("{0}Account/Verify?code={1}", WebHelper.GetFullyQualifiedApplicationPath(), @Model.EmailActivationToken.ToString(CultureInfo.InvariantCulture))">Click Here</a>
+
+@*@Url.Action(string.Format("{0}Verify", WebHelper.GetFullyQualifiedApplicationPath()), "Account", new { code =  })*@
+<br /> 
+<br />
+Thanks,
+<br/>
+Kidshub Administrator!

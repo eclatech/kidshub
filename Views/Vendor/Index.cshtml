@@ -1,4 +1,5 @@
-﻿@using PagedList
+﻿@using Eclatech.KidsHub.Common
+@using PagedList
 @using PagedList.Mvc
 @model IEnumerable<Eclatech.KidsHub.Objects.Vendor>
 
@@ -29,7 +30,7 @@
                 @Html.DisplayFor(modelItem => item.VendorName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditVendor",new { id = item.Id }, new Dictionary<string, object>
+                @Html.ActionLink("Edit", "EditVendor",new { vendorId = item.Id.EncryptLong() }, new Dictionary<string, object>
                                                                                 {
                                                                                     {"class","btn btn-xs"}
                                                                                 })
