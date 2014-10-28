@@ -14,7 +14,7 @@ We need you to verify your email.  Click the below link to get verified!
 <br/>
 <br />
 
-<a href="@string.Format("{0}Account/Verify?code={1}", WebHelper.GetFullyQualifiedApplicationPath(), @Model.ConfirmationToken.ToString(CultureInfo.InvariantCulture))">Click Here</a>
+<a href="@string.Format("{0}Account/Verify?code={1}", WebHelper.GetFullyQualifiedApplicationPath(), @Model.EmailActivationToken.ToString(CultureInfo.InvariantCulture))">Click Here</a>
 
 @*@Url.Action(string.Format("{0}Verify", WebHelper.GetFullyQualifiedApplicationPath()), "Account", new { code =  })*@
 <br /> 

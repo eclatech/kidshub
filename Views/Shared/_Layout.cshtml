@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - The complete online toy rental shop</title>
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
@@ -10,9 +10,9 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/bootstrap")
 </head>
-    <body>
-        @{
-            var menus = new[]
+<body>
+    @{
+        var menus = new[]
                     {
                         new { LinkText = "Home", ActionName="Index", ControllerName="Home", Roles="SuperAdmin, Admin", IsHeader=true, MenuOrder=0 },
                         new { LinkText = "Vendor", ActionName="AddVendor", ControllerName="Vendor", Roles="SuperAdmin, Admin", IsHeader=true, MenuOrder=1 },
@@ -22,7 +22,7 @@
                         new { LinkText = "Add Product", ActionName="AddProduct", ControllerName="Product", Roles="SuperAdmin, Admin", IsHeader=false, MenuOrder=5 },
                         new { LinkText = "Product List", ActionName="Index", ControllerName="Product", Roles="SuperAdmin, Admin", IsHeader=false, MenuOrder=6 }
                     };  
-}
+    }
     @if (User.Identity.IsAuthenticated)
     {
         var rolesForUsers = Roles.GetRolesForUser();
@@ -67,7 +67,7 @@
     <header>
         <div class="content-wrapper">
             <div class="float-left">
-                <p class="site-title">@Html.ActionLink("Kid's Hub", "Index", "Home")</p>
+                <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
             </div>
             <div class="float-right">
                 <section id="login">
@@ -92,7 +92,7 @@
     <footer>
         <div class="content-wrapper">
             <div class="float-left">
-                <p>&copy; @DateTime.Now.Year - Kid's Hub</p>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
             </div>
         </div>
     </footer>
